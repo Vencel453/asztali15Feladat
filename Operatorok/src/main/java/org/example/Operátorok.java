@@ -2,6 +2,8 @@ package org.example;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -53,7 +55,33 @@ public class Operátorok {
                     ossz++;
                 }
             }
-            System.out.printf("\t\t%s  -> %d db\n", kifejezes, ossz);
+            System.out.printf("\t\t%s\t-> %d db\n", kifejezes, ossz);
         }
+
+        System.out.print("7. feladat: kérek egy kifejezést (pl.: 1 + 1): ");
+        Scanner konzol = new Scanner(System.in);
+        String bekérés = konzol.nextLine();
+        while (!bekérés.equals("vége")) {
+            String[] bekérésTömb = bekérés.split(" ");
+            System.out.printf("\t\t%s = %s\n", bekérés, Kifejezés.Művelet(bekérésTömb));
+            System.out.print("7. feladat: kérek egy kifejezést (pl.: 1 + 1): ");
+            bekérés = konzol.nextLine();
+        }
+
+
+        try {
+            FileWriter író = new FileWriter("eredmenyek.txt");
+
+            for (Kifejezés egyed : kifejezések) {
+               String[] egyedTömb = {String.valueOf(egyed.getElsőOperandus()), egyed.getOperátor(), String.valueOf(egyed.getMásodikOperandsu())};
+               író.write(String.format("%s %s %s = %s\n", egyedTömb[0], egyedTömb[1], egyedTömb[2], Kifejezés.Művelet(egyedTömb)));
+            }
+
+            író.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("8. feladat: eredmenyek.txt");
     }
 }
