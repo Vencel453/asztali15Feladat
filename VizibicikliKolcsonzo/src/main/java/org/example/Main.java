@@ -121,13 +121,13 @@ public class Main {
         Collections.sort(típusok);
 
         for (Character karakter : típusok) {
-            int szamlalo = 0;
+            int szamlaloka = 0;
             for (Kolcsonzes egyed : kolcsonzesek) {
                 if (egyed.getJazon() == karakter) {
-                    szamlalo++;
+                    szamlaloka++;
                 }
             }
-            System.out.printf("\t\t%c - %d\n", karakter, szamlalo);
+            System.out.printf("\t\t%c - %d\n", karakter, szamlaloka);
         }
 
 
