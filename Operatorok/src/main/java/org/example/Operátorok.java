@@ -53,7 +53,7 @@ public class Operátorok {
                     ossz++;
                 }
             }
-            System.out.printf("\t\t%s -> %d db\n", kifejezes, ossz);
+            System.out.printf("\t\t%s  -> %d db\n", kifejezes, ossz);
         }
     }
 }
