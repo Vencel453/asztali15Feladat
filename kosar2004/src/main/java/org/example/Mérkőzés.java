@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.Date;
-
 public class Mérkőzés {
     private String hazai;
     private String idegen;
@@ -20,26 +18,26 @@ public class Mérkőzés {
     }
 
     public String getHazai() {
-        return hazai;
+        return this.hazai;
     }
 
     public String getIdegen() {
-        return idegen;
+        return this.idegen;
     }
 
     public int getHazai_pont() {
-        return hazai_pont;
+        return this.hazai_pont;
     }
 
     public int getIdegen_pont() {
-        return idegen_pont;
+        return this.idegen_pont;
     }
 
     public String getHelyszín() {
-        return helyszín;
+        return this.helyszín;
     }
 
     public String getIdőpont() {
-        return időpont;
+        return this.időpont;
     }
 }
